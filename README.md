@@ -1,0 +1,1 @@
+Xamarin Native Application built to simplify staffing allocation and other management needs.
