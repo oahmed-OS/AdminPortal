@@ -1,0 +1,1 @@
+﻿Create Table SomeTable(Id int PRIMARY KEY);
