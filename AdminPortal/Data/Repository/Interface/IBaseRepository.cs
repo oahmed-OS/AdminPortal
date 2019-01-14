@@ -5,10 +5,11 @@ using System.Data;
 
 namespace AdminPortal.Data.Repository
 {
-    interface IBaseRepository<TEntity> where TEntity : ITypeWithId
+    interface IBaseRepository<TEntity> where TEntity : class, ITypeWithId
     {
         TEntity GetEntityById(int Id);
 
-        IEnumerable<ITypeWithId> Execute(Action<IDbConnection> query);
+        IEnumerable<ITypeWithId> Execute(Func<IDbConnection, 
+            IEnumerable<ITypeWithId>> query);
     }
 }
