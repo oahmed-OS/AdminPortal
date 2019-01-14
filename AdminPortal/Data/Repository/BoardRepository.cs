@@ -11,7 +11,7 @@ namespace AdminPortal.Data.Repository
         private readonly string _CONNECTIONSTRING;
 
         public BoardRepository(string connectionString)
-            : base(connectionString, "Board")
+            : base(connectionString, "Boards")
         {
             _CONNECTIONSTRING = connectionString;
         }

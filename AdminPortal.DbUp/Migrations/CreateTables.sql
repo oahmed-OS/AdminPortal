@@ -61,7 +61,7 @@ Create Table EmployeeSkills (
 Create Table Boards (
 	Id int PRIMARY KEY,
 	BoardDate datetime NOT NULL,
-	DepartmentId int FOREIGN KEY References Department(Id),
+	DepartmentId int FOREIGN KEY References Departments(Id),
 	IsLock bit,
 	LockBy varchar(50)
 );
