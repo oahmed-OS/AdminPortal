@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AdminPortal.Data.Repository
 {
-    interface IBoardRepository
+    public interface IBoardRepository
     {
         Board GetDepartmentBoardByDate(int DepartmentId, DateTime Date);
     }

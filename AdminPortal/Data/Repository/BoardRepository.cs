@@ -6,7 +6,7 @@ using AdminPortal.Data.Model;
 
 namespace AdminPortal.Data.Repository
 {
-    class BoardRepository : BaseRepository, IBoardRepository
+    public class BoardRepository : BaseRepository<Board>, IBoardRepository
     {
         private readonly string _CONNECTIONSTRING;
 

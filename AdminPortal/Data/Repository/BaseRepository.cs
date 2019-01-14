@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace AdminPortal.Data.Repository
 {
-    class BaseRepository : IBaseRepository<ITypeWithId>
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, ITypeWithId
     {
         private readonly string _CONNECTIONSTRING;
         private readonly string _DESTINATION;
@@ -19,24 +19,24 @@ namespace AdminPortal.Data.Repository
             _DESTINATION = destination;
         }
         
-        public ITypeWithId GetEntityById(int IdParam)
+        public TEntity GetEntityById(int IdParam)
         {
-            ITypeWithId result;
+            TEntity result;
 
             var sql = "SELECT * FROM " + _DESTINATION + " WHERE Id = @Id";
 
             using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
             {
-                result = con.Query<ITypeWithId>(sql, new { Id = IdParam })
+                result = con.Query<TEntity>(sql, new { Id = IdParam })
                     .SingleOrDefault();
             }
 
             return result;
         }
 
-        public IEnumerable<ITypeWithId> Execute(Func<IDbConnection, IEnumerable<ITypeWithId>> query)
+        public IEnumerable<TEntity> Execute(Func<IDbConnection, IEnumerable<TEntity>> query)
         {
-            IEnumerable<ITypeWithId> result;
+            IEnumerable<TEntity> result;
 
             using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
             {

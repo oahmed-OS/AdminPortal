@@ -12,7 +12,7 @@ namespace AdminPortal.DbUp
         {
             var connectionString =
                 ConfigurationManager
-                .ConnectionStrings["DevConnection"].ToString();
+                .ConnectionStrings["DevConnection"].ConnectionString;
 
             //Uncomment if you want DB to be created if doesnt exist
             EnsureDatabase.For.SqlDatabase(connectionString);

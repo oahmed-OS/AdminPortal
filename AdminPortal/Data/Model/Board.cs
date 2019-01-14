@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AdminPortal.Data.Model
 {
-    class Board : ITypeWithId
+    public class Board : ITypeWithId
     {
         public int Id { get; set; }
 
