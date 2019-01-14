@@ -1,5 +1,6 @@
 using AdminPortal.Data.Model;
 using AdminPortal.Data.Repository;
+using AdminPortal.Test.Integration.Helper;
 using Dapper;
 using NUnit.Framework;
 using System;
@@ -18,10 +19,8 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DevConnection"]
-                .ConnectionString;
+            var connectionString = TestHelper.GetDevConnection();
 
-            // 1. Prepare Db By reseting & populating test data
             string scriptText = GetScript("SetupTest.sql");
             using (IDbConnection con = new SqlConnection(connectionString))
             {
@@ -34,16 +33,14 @@ namespace Tests
         }
 
         [Test]
-        public void UseBaseRepoToGetEmployee()
+        public void GetBoardByIdTest()
         {
             var board = boardRepository.GetEntityById(1);
 
             Assert.IsNotNull(board);
-            Assert.Equals(board.Id, 1);
-            Assert.Equals(board.DepartmentId, 1);
-            Assert.Equals(board.IsLock, false);
-
-            Assert.Pass();
+            Assert.AreEqual(board.Id, 1);
+            Assert.AreEqual(board.DepartmentId, 1);
+            Assert.AreEqual(board.IsLock, false);
         }
 
         //Reference: https://stackoverflow.com/questions/1379195/executing-a-sql-script-stored-as-a-resource
