@@ -8,5 +8,9 @@ namespace AdminPortal.Data.Repository
     public interface IBoardRepository
     {
         Board GetDepartmentBoardByDate(int DepartmentId, DateTime Date);
+
+        //void LockBoard(int BoardId, string LockUser);
+
+        //void UpdateBoardDetail();
     }
 }
