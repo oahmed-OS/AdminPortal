@@ -1,6 +1,6 @@
 ﻿namespace AdminPortal.Data.Model
 {
-    class Department : ITypeWithId
+    public class Department : ITypeWithId
     {
         public int Id { get; set; }
 

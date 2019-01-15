@@ -1,6 +1,6 @@
 ﻿namespace AdminPortal.Data.Model
 {
-    class Shift : ITypeWithId
+    public class Shift : ITypeWithId
     {
         public int Id { get; set; }
 

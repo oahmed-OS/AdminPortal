@@ -1,6 +1,6 @@
 ﻿namespace AdminPortal.Data.Model
 {
-    class Location : ITypeWithId
+    public class Location : ITypeWithId
     {
         public int Id { get; set; }
 

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AdminPortal.Data.Model
+﻿namespace AdminPortal.Data.Model
 {
-    class Employee : ITypeWithId
+    public class Employee : ITypeWithId
     {
         public int Id { get; set; }
 
