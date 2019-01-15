@@ -17,9 +17,19 @@ namespace AdminPortal.Data.Repository
             _CONNECTIONSTRING = connectionString;
         }
 
-        public Board GetDepartmentBoardByDate(int DepartmentId, DateTime Date)
+        public Board GetDepartmentBoardByDate(int DepartmentId, DateTime BoardDate)
         {
-            throw new NotImplementedException();
+            Board result;
+
+            var sql = "SELECT * FROM Boards WHERE DepartmentId = @Id AND BoardDate = @Date";
+
+            using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+            {
+                result = con.Query<Board>(sql, new { Id = DepartmentId, Date = BoardDate })
+                    .SingleOrDefault();
+            }
+
+            return result;
 
         }
     }
