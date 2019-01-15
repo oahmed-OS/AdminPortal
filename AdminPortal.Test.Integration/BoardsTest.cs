@@ -1,14 +1,7 @@
-using AdminPortal.Data.Model;
 using AdminPortal.Data.Repository;
 using AdminPortal.Test.Integration.Helper;
-using Dapper;
 using NUnit.Framework;
 using System;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.IO;
-using System.Reflection;
 
 namespace Tests
 {

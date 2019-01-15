@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
+using System.Data.SqlClient;
+using System.Linq;
 using AdminPortal.Data.Model;
+using Dapper;
 
 namespace AdminPortal.Data.Repository
 {
