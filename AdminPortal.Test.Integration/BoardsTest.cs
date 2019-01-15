@@ -2,6 +2,7 @@ using AdminPortal.Data.Repository;
 using AdminPortal.Test.Integration.Helper;
 using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
 
 namespace Tests
 {
@@ -26,6 +27,20 @@ namespace Tests
         public void GetBoardByIdTest()
         {
             var board = boardRepository.GetEntityById(1);
+
+            Assert.IsNotNull(board);
+            Assert.AreEqual(board.Id, 1);
+            Assert.AreEqual(board.DepartmentId, 1);
+            Assert.AreEqual(board.IsLock, false);
+            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.IsNull(board.LockBy);
+        }
+
+
+        [Test]
+        public async Task GetBoardByIdAsyncTest()
+        {
+            var board = await boardRepository.GetEntityByIdAsync(1);
 
             Assert.IsNotNull(board);
             Assert.AreEqual(board.Id, 1);

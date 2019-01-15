@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace AdminPortal.Data.Repository
 {
@@ -34,6 +35,21 @@ namespace AdminPortal.Data.Repository
             return result;
         }
 
+        public async Task<TEntity> GetEntityByIdAsync(int IdParam)
+        {
+            TEntity result;
+
+            var sql = "SELECT * FROM " + _DESTINATION + " WHERE Id = @Id";
+
+            using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+            {
+                var queryResult = await con.QueryAsync<TEntity>(sql, new { Id = IdParam });
+                result = queryResult.SingleOrDefault();
+            }
+
+            return result;
+        }
+
         public IEnumerable<TEntity> Execute(Func<IDbConnection, IEnumerable<TEntity>> query)
         {
             IEnumerable<TEntity> result;
@@ -45,5 +61,22 @@ namespace AdminPortal.Data.Repository
 
             return result;
         }
+
+        //public Task<IEnumerable<TEntity>> ExecuteAsync(Func<IDbConnection, IEnumerable<TEntity>> query)
+        //{
+        //    IEnumerable<TEntity> result = null;
+
+        //    using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+        //    {
+
+        //        var tmp = query.BeginInvoke(con, queryAsyncResult =>
+        //        {
+        //            result = query.EndInvoke(queryAsyncResult);
+        //        }, null);
+                
+        //    }
+
+        //    return result;
+        //}
     }
 }
