@@ -59,7 +59,7 @@ Create Table EmployeeSkills (
 -- Boards Tables
 
 Create Table Boards (
-	Id int PRIMARY KEY,
+	Id int PRIMARY KEY Identity(1,1),
 	BoardDate datetime NOT NULL,
 	DepartmentId int FOREIGN KEY References Departments(Id),
 	IsLock bit,
@@ -67,7 +67,7 @@ Create Table Boards (
 );
 
 Create Table BoardDetails (
-	Id int PRIMARY KEY,
+	Id int PRIMARY KEY Identity(1,1),
 	BoardId int FOREIGN KEY References Boards(Id),
 	LocationId int FOREIGN KEY References Locations(Id),
 	EmployeeId int FOREIGN KEY References Employees(Id),

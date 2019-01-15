@@ -18,6 +18,7 @@ namespace AdminPortal.Test.Integration.Helper
             }
         }
 
+        //Reference https://stackoverflow.com/questions/42268265/how-to-get-manage-user-secrets-in-a-net-core-console-application
         public static string GetDevConnection()
         {
             var builder = new ConfigurationBuilder()
