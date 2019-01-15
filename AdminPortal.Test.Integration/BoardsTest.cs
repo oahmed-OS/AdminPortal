@@ -20,7 +20,6 @@ namespace Tests
 
             // 2. Initialize Repository
             boardRepository = new BoardRepository(connectionString);
-
         }
 
         [Test]
@@ -29,10 +28,10 @@ namespace Tests
             var board = boardRepository.GetEntityById(1);
 
             Assert.IsNotNull(board);
-            Assert.AreEqual(board.Id, 1);
-            Assert.AreEqual(board.DepartmentId, 1);
-            Assert.AreEqual(board.IsLock, false);
-            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.AreEqual(1, board.Id);
+            Assert.AreEqual(1, board.DepartmentId);
+            Assert.AreEqual(false, board.IsLock);
+            Assert.AreEqual(new DateTime(2019, 1, 1), board.BoardDate);
             Assert.IsNull(board.LockBy);
         }
 
@@ -43,10 +42,10 @@ namespace Tests
             var board = await boardRepository.GetEntityByIdAsync(1);
 
             Assert.IsNotNull(board);
-            Assert.AreEqual(board.Id, 1);
-            Assert.AreEqual(board.DepartmentId, 1);
-            Assert.AreEqual(board.IsLock, false);
-            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.AreEqual(1, board.Id);
+            Assert.AreEqual(1, board.DepartmentId);
+            Assert.AreEqual(false, board.IsLock);
+            Assert.AreEqual(new DateTime(2019, 1, 1), board.BoardDate);
             Assert.IsNull(board.LockBy);
         }
 
@@ -56,10 +55,10 @@ namespace Tests
             var board = boardRepository.GetDepartmentBoardByDate(1, new DateTime(2019, 1, 1));
 
             Assert.IsNotNull(board);
-            Assert.AreEqual(board.Id, 1);
-            Assert.AreEqual(board.DepartmentId, 1);
-            Assert.AreEqual(board.IsLock, false);
-            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.AreEqual(1, board.Id);
+            Assert.AreEqual(1, board.DepartmentId);
+            Assert.AreEqual(false, board.IsLock);
+            Assert.AreEqual(new DateTime(2019, 1, 1), board.BoardDate);
             Assert.IsNull(board.LockBy);
         }
     }
