@@ -38,6 +38,21 @@ namespace Tests
             Assert.AreEqual(board.Id, 1);
             Assert.AreEqual(board.DepartmentId, 1);
             Assert.AreEqual(board.IsLock, false);
+            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.IsNull(board.LockBy);
+        }
+
+        [Test]
+        public void GetBoardByDateAndDepartmentIdTest()
+        {
+            var board = boardRepository.GetDepartmentBoardByDate(1, new DateTime(2019, 1, 1));
+
+            Assert.IsNotNull(board);
+            Assert.AreEqual(board.Id, 1);
+            Assert.AreEqual(board.DepartmentId, 1);
+            Assert.AreEqual(board.IsLock, false);
+            Assert.AreEqual(board.BoardDate, new DateTime(2019, 1, 1));
+            Assert.IsNull(board.LockBy);
         }
     }
 }
