@@ -20,11 +20,6 @@ namespace AdminPortal.Android
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.activity_main);
 
-			SupportV7.Widget.Toolbar toolbar = FindViewById<SupportV7.Widget.Toolbar>(Resource.Id.toolbar);
-			SetSupportActionBar(toolbar);
-
-			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-			fab.Click += FabOnClick;
 		}
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
@@ -42,13 +37,6 @@ namespace AdminPortal.Android
 			}
 
 			return base.OnOptionsItemSelected(item);
-		}
-
-		private void FabOnClick(object sender, EventArgs eventArgs)
-		{
-			View view = (View) sender;
-			Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-				.SetAction("Action", (AndroidViews.View.IOnClickListener)null).Show();
 		}
 	}
 }

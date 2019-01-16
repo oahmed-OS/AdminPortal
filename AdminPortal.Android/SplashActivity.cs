@@ -20,7 +20,6 @@ namespace AdminPortal.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //SetContentView(Resource.Layout.activity_splash);
         }
 
         protected override void OnResume()
@@ -42,7 +41,7 @@ namespace AdminPortal.Android
             // await SomeTask();
             await Task.Delay(2000);
 
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            StartActivity(new Intent(Application.Context, typeof(LoginActivity)));
         }
     }
 }

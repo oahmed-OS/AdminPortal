@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:gravity="center"
+	android:layout_height="match_parent"
+	android:focusable="true"
+	android:focusableInTouchMode="true">
+
+	<ImageView
+		android:src="@drawable/MOA"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:layout_marginTop="-50dp"
+		android:minHeight="25px"
+		android:id="@+id/brandLogo"/>
+
+	<EditText
+		android:id="@+id/emailInput"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:drawableLeft="@drawable/emailLogo"
+		android:drawablePadding="20dp"
+		android:paddingTop="50dp"
+		android:singleLine="true"
+		android:width="280dp"
+		android:hint="Email"
+		android:textColor="#1976d2"
+		android:theme="@style/AppTheme.Controls"/>
+
+		<EditText
+		android:id="@+id/passwordInput"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:drawableLeft="@drawable/lockLogo"
+		android:drawablePadding="20dp"
+		android:paddingTop="50dp"
+		android:singleLine="true"
+		android:width="280dp"
+		android:hint="Password"
+		android:inputType="textPassword"
+		android:textColor="#1976d2"
+		android:theme="@style/AppTheme.Controls"/>
+
+	<Button
+		android:text="Log In"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/button_login"
+		android:width="250dp"
+		android:height="50dp"
+		android:layout_marginTop="50dp"
+		android:layout_gravity="center"
+		android:id="@+id/loginButton" />
+
+
+</LinearLayout>
