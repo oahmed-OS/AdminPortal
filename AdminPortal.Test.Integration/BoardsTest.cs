@@ -50,7 +50,7 @@ namespace Tests
         }
 
         [Test]
-        public void GetBoardByDateAndDepartmentIdTest()
+        public void GetDepartmentBoardByDateTest()
         {
             var board = boardRepository.GetDepartmentBoardByDate(1, new DateTime(2019, 1, 1));
 
@@ -60,6 +60,13 @@ namespace Tests
             Assert.AreEqual(false, board.IsLock);
             Assert.AreEqual(new DateTime(2019, 1, 1), board.BoardDate);
             Assert.IsNull(board.LockBy);
+        }
+
+        [Test]
+        public void GetDepartmentBoardByDateServiceTest()
+        {
+            //TODO: Implement Test
+            Assert.Pass();
         }
     }
 }
