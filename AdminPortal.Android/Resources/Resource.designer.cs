@@ -2465,9 +2465,6 @@ namespace AdminPortal.Android
 			// aapt resource value: 0x7f08008b
 			public const int brandLogo = 2131230859;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int btn_dialog = 2131230880;
-			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
@@ -2554,6 +2551,9 @@ namespace AdminPortal.Android
 			
 			// aapt resource value: 0x7f080040
 			public const int enterAlwaysCollapsed = 2131230784;
+			
+			// aapt resource value: 0x7f0800a0
+			public const int error_btn = 2131230880;
 			
 			// aapt resource value: 0x7f08009f
 			public const int error_description = 2131230879;
@@ -3089,7 +3089,7 @@ namespace AdminPortal.Android
 			public const int design_text_input_password_icon = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int dialog_login_error = 2130968619;
+			public const int dialog_error = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
 			public const int notification_action = 2130968620;
@@ -3137,22 +3137,19 @@ namespace AdminPortal.Android
 			public const int notification_template_part_time = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int sample = 2130968635;
+			public const int select_dialog_item_material = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_item_material = 2130968636;
+			public const int select_dialog_multichoice_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_multichoice_material = 2130968637;
+			public const int select_dialog_singlechoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int select_dialog_singlechoice_material = 2130968638;
+			public const int support_simple_spinner_dropdown_item = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int support_simple_spinner_dropdown_item = 2130968639;
-			
-			// aapt resource value: 0x7f040040
-			public const int tooltip = 2130968640;
+			public const int tooltip = 2130968639;
 			
 			static Layout()
 			{

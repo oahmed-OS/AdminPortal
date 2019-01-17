@@ -41,7 +41,10 @@ namespace AdminPortal.Android
             // await SomeTask();
             await Task.Delay(2000);
 
-            StartActivity(new Intent(Application.Context, typeof(LoginActivity)));
+            var loginIntent = new Intent(Application.Context, typeof(LoginActivity));
+            loginIntent.AddFlags(ActivityFlags.NoAnimation);
+
+            StartActivity(loginIntent);
         }
     }
 }
