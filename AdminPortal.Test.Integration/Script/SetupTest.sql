@@ -11,10 +11,10 @@
 		TRUNCATE TABLE EmployeeSkills;
 
 		TRUNCATE TABLE BoardDetails;
-		--DBCC CHECKIDENT ('BoardDetails', RESEED, 1);
+		DBCC CHECKIDENT ('BoardDetails', RESEED, 0);
 
 		DELETE FROM Boards;
-		--DBCC CHECKIDENT ('Boards', RESEED, 1);
+		DBCC CHECKIDENT ('Boards', RESEED, 0);
 
 		DELETE FROM Employees;
 		DBCC CHECKIDENT ('Employees', RESEED, 0);
@@ -61,8 +61,8 @@
 		VALUES('John', 'Doe', '1234', 1);
 
 
-		INSERT INTO Boards(Id, BoardDate, DepartmentId, IsLock, LockBy)
-		VALUES(1, DATEFROMPARTS(2019, 1, 1), 1, 0, NULL);
+		INSERT INTO Boards(BoardDate, DepartmentId, IsLock, LockBy)
+		VALUES(DATEFROMPARTS(2019, 1, 1), 1, 0, NULL);
 
 
 		INSERT INTO RotationDetails(RotationId, LocationId, DepartmentId)
@@ -77,8 +77,8 @@
 		VALUES(1, 1);
 
 
-		INSERT INTO BoardDetails(Id, BoardId, LocationId, EmployeeId, ShiftId)
-		VALUES(1, 1, 1, 1, 1);
+		INSERT INTO BoardDetails(BoardId, LocationId, EmployeeId, ShiftId)
+		VALUES(1, 1, 1, 1);
 
 		COMMIT
 
