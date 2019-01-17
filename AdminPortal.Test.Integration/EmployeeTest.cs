@@ -58,5 +58,18 @@ namespace Tests
             Assert.AreEqual(1, employeeSkills.First().Id);
             Assert.AreEqual("Cash", employeeSkills.First().Name);
         }
+
+        [Test]
+        public void GetEmployeeByUserIdTest()
+        {
+            var employee = employeeRepository.GetEmployeeByUserId("1234");
+
+            Assert.IsNotNull(employee);
+            Assert.AreEqual(1, employee.Id);
+            Assert.AreEqual("John", employee.FirstName);
+            Assert.AreEqual("Doe", employee.LastName);
+            Assert.AreEqual("1234", employee.UserId);
+            Assert.AreEqual(1, employee.DepartmentId);
+        }
     }
 }

@@ -4,6 +4,7 @@ using Dapper;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace AdminPortal.Data.Repository
 {
@@ -26,6 +27,21 @@ namespace AdminPortal.Data.Repository
             using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
             {
                 result = con.Query<Skill>(sql, new { Id = EmployeeId });
+            }
+
+            return result;
+        }
+
+        public Employee GetEmployeeByUserId(string UserId)
+        {
+            Employee result;
+
+            var sql = "SELECT * FROM Employees WHERE UserId = @Id";
+
+            using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+            {
+                result = con.Query<Employee>(sql, new { Id = UserId })
+                    .FirstOrDefault();
             }
 
             return result;
