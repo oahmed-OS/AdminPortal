@@ -14,10 +14,14 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Script\LockBoards.sql" />
     <None Remove="Script\SetupTest.sql" />
+    <None Remove="Script\UnlockBoards.sql" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Script\LockBoards.sql" />
     <EmbeddedResource Include="Script\SetupTest.sql" />
+    <EmbeddedResource Include="Script\UnlockBoards.sql" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />

@@ -5,11 +5,13 @@ using System.Text;
 
 namespace AdminPortal.Data.Repository
 {
-    public interface IBoardRepository
+    public interface IBoardRepository 
     {
         Board GetDepartmentBoardByDate(int DepartmentId, DateTime Date);
 
-        //void LockBoard(int BoardId, string LockUser);
+        void LockBoard(int BoardId, string LockUser);
+
+        void UnlockBoard(int BoardId);
 
         //void UpdateBoardDetail();
     }

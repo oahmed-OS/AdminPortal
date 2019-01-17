@@ -1,0 +1,1 @@
+﻿UPDATE Boards SET IsLock = 1

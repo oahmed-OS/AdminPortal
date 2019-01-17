@@ -11,7 +11,25 @@ namespace AdminPortal.Test.Integration.Helper
     {
         public static void ResetDb(string connectionString)
         {
-            string scriptText = GetResetScript();
+            string scriptText = GetScript("SetupTest");
+            using (IDbConnection con = new SqlConnection(connectionString))
+            {
+                con.Execute(scriptText);
+            }
+        }
+
+        public static void LockBoards(string connectionString)
+        {
+            string scriptText = GetScript("LockBoards");
+            using (IDbConnection con = new SqlConnection(connectionString))
+            {
+                con.Execute(scriptText);
+            }
+        }
+
+        public static void UnlockBoards(string connectionString)
+        {
+            string scriptText = GetScript("UnlockBoards");
             using (IDbConnection con = new SqlConnection(connectionString))
             {
                 con.Execute(scriptText);
@@ -31,12 +49,12 @@ namespace AdminPortal.Test.Integration.Helper
         }
 
         //Reference: https://stackoverflow.com/questions/1379195/executing-a-sql-script-stored-as-a-resource
-        private static string GetResetScript()
+        private static string GetScript(string fileName)
         {
             string commandText;
+            string filePath = "AdminPortal.Test.Integration.Script." + fileName + ".sql";
             Assembly thisAssembly = Assembly.GetExecutingAssembly();
-            using (Stream s = thisAssembly.GetManifestResourceStream(
-                  "AdminPortal.Test.Integration.Script.SetupTest.sql"))
+            using (Stream s = thisAssembly.GetManifestResourceStream(filePath))
             {
                 using (StreamReader sr = new StreamReader(s))
                 {
@@ -46,5 +64,7 @@ namespace AdminPortal.Test.Integration.Helper
 
             return commandText;
         }
+
+
     }
 }

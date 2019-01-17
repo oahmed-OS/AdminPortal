@@ -32,5 +32,25 @@ namespace AdminPortal.Data.Repository
             return result;
 
         }
+
+        public void LockBoard(int BoardId, string LockUser)
+        {
+            var sql = "UPDATE Boards SET IsLock = 1, LockBy = @User WHERE Id = @Id";
+
+            using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+            {
+                con.Query(sql, new { User = LockUser, Id = BoardId });
+            }
+        }
+
+        public void UnlockBoard(int BoardId)
+        {
+            var sql = "UPDATE Boards SET IsLock = 0, LockBy = null WHERE Id = @Id";
+
+            using (IDbConnection con = new SqlConnection(_CONNECTIONSTRING))
+            {
+                con.Query(sql, new { Id = BoardId });
+            }
+        }
     }
 }
