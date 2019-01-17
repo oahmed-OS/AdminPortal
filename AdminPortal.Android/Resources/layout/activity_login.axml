@@ -16,37 +16,6 @@
 		android:minHeight="25px"
 		android:id="@+id/brandLogo"/>
 
-	<EditText
-		android:id="@+id/emailInput"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:drawableLeft="@drawable/email_logo"
-		android:drawablePadding="20dp"
-		android:paddingTop="50dp"
-		android:singleLine="true"
-		android:width="280dp"
-		android:hint="Email"
-		android:inputType="textEmailAddress"
-		android:textColor="#1976d2"
-		android:theme="@style/AppTheme.Controls"/>
-
-		<EditText
-		android:id="@+id/passwordInput"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:drawableLeft="@drawable/lock_logo"
-		android:drawablePadding="20dp"
-		android:paddingTop="50dp"
-		android:singleLine="true"
-		android:width="280dp"
-		android:hint="Password"
-		android:inputType="textPassword"
-		android:textColor="#1976d2"
-		android:imeOptions="actionDone"
-		android:theme="@style/AppTheme.Controls"/>
-
 	<Button
 		android:text="Log In"
 		android:layout_width="wrap_content"

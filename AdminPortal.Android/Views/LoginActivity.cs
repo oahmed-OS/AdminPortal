@@ -21,7 +21,17 @@ namespace AdminPortal.Android
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_login);
 
+            var loginButton = FindViewById<Button>(Resource.Id.loginButton);
+
+            loginButton.Click += LoginButton_Click;
         }
 
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            //Perform Authentication
+
+            //Auth Successfull
+            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+        }
     }
 }
