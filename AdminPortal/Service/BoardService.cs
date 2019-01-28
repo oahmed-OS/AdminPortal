@@ -21,9 +21,20 @@ namespace AdminPortal.Service
         }
 
         //TODO: Implement Method
+        // Returns: true if locked, false otherwise
         public bool LockBoard(int BoardId, string LockBy)
         {
-            throw new NotImplementedException();
+            //Grab Board
+            var board = boardRepository.GetBoardById(BoardId);
+
+            //Ensure Board is Not Locked
+
+
+            //Lock Board
+
+
+
+            return false;
         }
     }
 }

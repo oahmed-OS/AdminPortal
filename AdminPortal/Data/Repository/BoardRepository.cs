@@ -17,6 +17,11 @@ namespace AdminPortal.Data.Repository
             _CONNECTIONSTRING = connectionString;
         }
 
+        public Board GetBoardById(int Id)
+        {
+            return base.GetEntityById(Id);
+        }
+
         public Board GetDepartmentBoardByDate(int DepartmentId, DateTime BoardDate)
         {
             Board result;
